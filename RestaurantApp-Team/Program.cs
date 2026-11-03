@@ -34,6 +34,7 @@ namespace RestaurantApp_Team
                 Console.WriteLine("1. Add Restaurant");
                 Console.WriteLine("2. Show Good Rating");
                 Console.WriteLine("3. Show Summary");
+                Console.WriteLine("4.Show Restaurant");
                 Console.WriteLine("0. Exit");
                 Console.Write("Select Menu: ");
 
@@ -50,6 +51,10 @@ namespace RestaurantApp_Team
                     case "3":
                         ShowSummary();
                         break;
+                    case "4":
+                        ShowRestaurant();
+
+                        break;
                     case "0":
                         return;
                     default:
@@ -60,23 +65,12 @@ namespace RestaurantApp_Team
         }
 
         // คน A รับผิดชอบ
-        static void AddRestaurant()
-<<<<<<< Updated upstream
-        {  
-            Console.WriteLine("Not completed");
-=======
+        static void AddRestaurant()       
         {
-            List<string> RestauranteList = new List<string>();
-            Console.WriteLine("กรอกข้อมูลร้าน : ");
-            string name = Console.ReadLine();
 
-            Console.WriteLine("กรอกประเถทร้านอาหาร เช่น (hot pot) :");
-            string type = Console.ReadLine();
-
-            Console.WriteLine("กรอก");
-
->>>>>>> Stashed changes
+            Console.WriteLine("Not completed");
         }
+        
 
         // คน B รับผิดชอบ
         static void ShowGoodRating()
@@ -89,16 +83,29 @@ namespace RestaurantApp_Team
         {
             Console.WriteLine("Not completed");
         }
-<<<<<<< Updated upstream
-=======
+
 
         // คน D รับผิดชอบ
         static void ShowRestaurant()
-        { 
-            
+        {
+            Console.WriteLine("=== รายชื่อร้านอาหาร ===");
+            foreach (Restaurant r in restaurants)
+            {
+                Console.WriteLine(
+                r.Name + " | " +
+                r.Type + " | " +
+                r.Rating
+                );
+            }
+           
+             
+            }
         }
 
->>>>>>> Stashed changes
+
     }
 
-}
+
+
+
+
