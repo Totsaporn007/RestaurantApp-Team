@@ -61,8 +61,21 @@ namespace RestaurantApp_Team
 
         // คน A รับผิดชอบ
         static void AddRestaurant()
+<<<<<<< Updated upstream
         {  
             Console.WriteLine("Not completed");
+=======
+        {
+            List<string> RestauranteList = new List<string>();
+            Console.WriteLine("กรอกข้อมูลร้าน : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("กรอกประเถทร้านอาหาร เช่น (hot pot) :");
+            string type = Console.ReadLine();
+
+            Console.WriteLine("กรอก");
+
+>>>>>>> Stashed changes
         }
 
         // คน B รับผิดชอบ
@@ -76,6 +89,16 @@ namespace RestaurantApp_Team
         {
             Console.WriteLine("Not completed");
         }
+<<<<<<< Updated upstream
+=======
+
+        // คน D รับผิดชอบ
+        static void ShowRestaurant()
+        { 
+            
+        }
+
+>>>>>>> Stashed changes
     }
 
 }
