@@ -11,20 +11,19 @@ namespace RestaurantApp_Team
         public string Name { get; set; }
         public string Type { get; set; }
         public double Rating { get; set; }
+
+        public Restaurant(string name,string type,double rating)
+        {
+            Name = name;
+            Type = type;
+            Rating = rating;
+
+        }
     }
 
     internal class Program
     {
-        static List<Restaurant> restaurants = new List<Restaurant>
-    {
-        new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
-        new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 },
-        new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
-        new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 }
 
-    };
 
         static void Main(string[] args)
         {
@@ -34,6 +33,7 @@ namespace RestaurantApp_Team
                 Console.WriteLine("1. Add Restaurant");
                 Console.WriteLine("2. Show Good Rating");
                 Console.WriteLine("3. Show Summary");
+                Console.WriteLine("4. Show Restaurant");
                 Console.WriteLine("0. Exit");
                 Console.Write("Select Menu: ");
 
@@ -50,6 +50,9 @@ namespace RestaurantApp_Team
                     case "3":
                         ShowSummary();
                         break;
+                    case "4":
+                        ShowRestaurant();
+                        break;
                     case "0":
                         return;
                     default:
@@ -61,8 +64,9 @@ namespace RestaurantApp_Team
 
         // คน A รับผิดชอบ
         static void AddRestaurant()
-        {  
-            Console.WriteLine("Not completed");
+        {
+            Console.WriteLine("กรอกชื่อร้านอาหาร ");
+            Console.ReadLine();
         }
 
         // คน B รับผิดชอบ
@@ -76,6 +80,13 @@ namespace RestaurantApp_Team
         {
             Console.WriteLine("Not completed");
         }
+
+
+        static void ShowRestaurant()
+        { 
+            
+        }
+
     }
 
 }
