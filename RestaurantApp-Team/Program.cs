@@ -23,12 +23,14 @@ namespace RestaurantApp_Team
 
     internal class Program
     {
-
-
+        static List<Restaurant> restaurantlist = new List<Restaurant>();
         static void Main(string[] args)
         {
+            
+
             while (true)
             {
+                 
                 Console.WriteLine("\n===== Restaurant Menu =====");
                 Console.WriteLine("1. Add Restaurant");
                 Console.WriteLine("2. Show Good Rating");
@@ -65,8 +67,22 @@ namespace RestaurantApp_Team
         // คน A รับผิดชอบ
         static void AddRestaurant()
         {
-            Console.WriteLine("กรอกชื่อร้านอาหาร ");
-            Console.ReadLine();
+         
+
+            Console.Write("กรอกชื่อร้าน : ");
+            string name = Console.ReadLine();
+
+            Console.Write("กรอกประเภท : ");
+            string type = Console.ReadLine();
+
+            Console.Write("กรอกเรทติ้ง : ");
+            double rating = Convert.ToDouble(Console.ReadLine());
+
+            restaurantlist.Add(new Restaurant(name, type,rating));
+            Console.WriteLine("เพิ่มเรียบร้อย");
+
+
+
         }
 
         // คน B รับผิดชอบ
