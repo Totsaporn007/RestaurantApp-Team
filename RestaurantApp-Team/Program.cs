@@ -11,29 +11,26 @@ namespace RestaurantApp_Team
         public string Name { get; set; }
         public string Type { get; set; }
         public double Rating { get; set; }
+        public Restaurant(string name,string type,double rating)
+        {
+            Name = name;
+            Type = type;
+            Rating = rating;
 
-        public Restaurant(string name, string type, double rating) { Name = name;Type = type;Rating = rating; }
-
-        
-{
-new Restaurant { Name = &quot; KFC&quot;, Type = &quot; Fast Food&quot;, Rating = 4.2 },
-new Restaurant { Name = &quot; MK&quot;, Type = &quot; Suki&quot;, Rating = 4.7 },
-new Restaurant { Name = &quot; Fuji&quot;, Type = &quot; Japanese&quot;, Rating = 4.8 }
-    };
-}
-
+        }
+    }
     internal class Program
     {
         static List<Restaurant> RestaurantsList = new List<Restaurant>();
-
         static void Main(string[] args)
         {
             while (true)
-            {
+            {        
                 Console.WriteLine("\n===== Restaurant Menu =====");
                 Console.WriteLine("1. Add Restaurant");
                 Console.WriteLine("2. Show Good Rating");
                 Console.WriteLine("3. Show Summary");
+                Console.WriteLine("4. Show Restaurant");
                 Console.WriteLine("0. Exit");
                 Console.Write("Select Menu: ");
 
@@ -50,6 +47,9 @@ new Restaurant { Name = &quot; Fuji&quot;, Type = &quot; Japanese&quot;, Rating 
                     case "3":
                         ShowSummary();
                         break;
+                    case "4":
+                        ShowRestaurant();
+                        break;
                     case "0":
                         return;
                     default:
@@ -60,16 +60,20 @@ new Restaurant { Name = &quot; Fuji&quot;, Type = &quot; Japanese&quot;, Rating 
         }
 
         // คน A รับผิดชอบ
-        static void AddRestaurant() {
-         
-            Console.WriteLine("กรอกข้อมูลร้าน : ");
+        static void AddRestaurant()
+        {
+  
+            Console.Write("กรอกชื่อร้าน : ");
             string name = Console.ReadLine();
 
-            Console.WriteLine("กรอกประเถทร้านอาหาร เช่น (hot pot) :");
+            Console.Write("กรอกประเภท : ");
             string type = Console.ReadLine();
 
-            Console.WriteLine("กรอก");
+            Console.Write("กรอกเรทติ้ง : ");
+            double rating = Convert.ToDouble(Console.ReadLine());
 
+            restaurantlist.Add(new Restaurant(name, type,rating));
+            Console.WriteLine("เพิ่มเรียบร้อย");
         }
 
             // คน B รับผิดชอบ
@@ -116,10 +120,10 @@ new Restaurant { Name = &quot; Fuji&quot;, Type = &quot; Japanese&quot;, Rating 
         }
 
 
+
         // คน D รับผิดชอบ
         static void ShowRestaurant()
         { 
-            
         }
 
     }
