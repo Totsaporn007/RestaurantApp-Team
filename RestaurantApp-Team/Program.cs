@@ -11,20 +11,20 @@ namespace RestaurantApp_Team
         public string Name { get; set; }
         public string Type { get; set; }
         public double Rating { get; set; }
-    }
+
+        public Restaurant(string name, string type, double rating) { Name = name;Type = type;Rating = rating; }
+
+        
+{
+new Restaurant { Name = &quot; KFC&quot;, Type = &quot; Fast Food&quot;, Rating = 4.2 },
+new Restaurant { Name = &quot; MK&quot;, Type = &quot; Suki&quot;, Rating = 4.7 },
+new Restaurant { Name = &quot; Fuji&quot;, Type = &quot; Japanese&quot;, Rating = 4.8 }
+    };
+}
 
     internal class Program
     {
-        static List<Restaurant> restaurants = new List<Restaurant>
-    {
-        new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
-        new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 },
-        new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
-        new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 }
-
-    };
+        static List<Restaurant> RestaurantsList = new List<Restaurant>();
 
         static void Main(string[] args)
         {
@@ -60,13 +60,8 @@ namespace RestaurantApp_Team
         }
 
         // คน A รับผิดชอบ
-        static void AddRestaurant()
-<<<<<<< Updated upstream
-        {  
-            Console.WriteLine("Not completed");
-=======
-        {
-            List<string> RestauranteList = new List<string>();
+        static void AddRestaurant() {
+         
             Console.WriteLine("กรอกข้อมูลร้าน : ");
             string name = Console.ReadLine();
 
@@ -75,13 +70,19 @@ namespace RestaurantApp_Team
 
             Console.WriteLine("กรอก");
 
->>>>>>> Stashed changes
         }
 
-        // คน B รับผิดชอบ
-        static void ShowGoodRating()
+            // คน B รับผิดชอบ
+            static void ShowGoodRating()
         {
-            Console.WriteLine("Not completed");
+
+            var goodRatingRestaurants = RestaurantsList.Where(r => r.Rating >= 4.5);
+
+            Console.WriteLine("--- ร้านที่มีคะแนนตั้งแต่ 4.5 ขึ้นไป ---");
+            foreach (var r in goodRatingRestaurants)
+            {
+                Console.WriteLine($"ชื่อ: {r.Name} | ประเภท: {r.Type} | คะแนน: {r.Rating}");
+            }
         }
 
         // คน C รับผิดชอบ
@@ -89,8 +90,7 @@ namespace RestaurantApp_Team
         {
             Console.WriteLine("Not completed");
         }
-<<<<<<< Updated upstream
-=======
+
 
         // คน D รับผิดชอบ
         static void ShowRestaurant()
@@ -98,7 +98,6 @@ namespace RestaurantApp_Team
             
         }
 
->>>>>>> Stashed changes
     }
 
 }
