@@ -75,6 +75,7 @@ namespace RestaurantApp_Team
             restaurantlist.Add(new Restaurant(name, type,rating));
             Console.WriteLine("เพิ่มเรียบร้อย");
         }
+        
 
             // คน B รับผิดชอบ
             static void ShowGoodRating()
@@ -118,14 +119,26 @@ namespace RestaurantApp_Team
             Console.WriteLine( "คะแนนสูงสุด:"  +highest);
             Console.WriteLine("คะแนนต่ำสุด:" + lowest);
         }
-
-
-
         // คน D รับผิดชอบ
         static void ShowRestaurant()
-        { 
+        {
+            Console.WriteLine("=== รายชื่อร้านอาหาร ===");
+            foreach (Restaurant r in restaurants)
+            {
+                Console.WriteLine(
+                r.Name + " | " +
+                r.Type + " | " +
+                r.Rating
+                );
+            }
+           
+             
         }
+       }
 
     }
 
-}
+
+
+
+
